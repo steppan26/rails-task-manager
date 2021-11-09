@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="card" style="width: 18rem">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <h2 class="card-title"><%= @task.title %></h2>
+        <div>
+          <%= link_to edit_task_path(@task) do %>
+            <i class="far fa-edit me-2"></i>
+          <% end %>
+          <%= link_to destroy_task_path(@task), method: :delete, data: { confirm: "Are you sure you wish to delete #{@task.title}?" } do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        </div>
+      </div>
+      <h6 class="card-subtitle text-muted fst-italic pt-2 pb-3">
+        <%if !@task.completed%>
+        Not
+        <% end %>
+        Completed</h6>
+      <p class="card-text"><%= @task.details %></p>
+    </div>
+  </div>
+  <%= link_to "Return to tasks list", index_path, class: "btn btn-outline-primary mt-3" %>
+</div>

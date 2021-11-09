@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="card p-3">
+    <h2 class="">CREATE NEW TASK</h2>
+    <%= simple_form_for @task, url: tasks_path do |f| %>
+    <%= f.input :title %>
+    <%= f.input :details %>
+    <div class="d-flex justify-content-between">
+      <div>
+        <%= f.button :submit, class: "btn-primary" %>
+        <%= f.button :button, "Reset", type: "reset", class: "btn-outline-secondary" %>
+      </div>
+      <%= link_to "Return to tasks list", index_path, class: "btn btn-outline-primary" %>
+    </div>
+    <% end %>
+  </div>
+</div>

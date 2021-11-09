@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="card p-3">
+    <h2 class="">EDIT TASK</h2>
+    <%= simple_form_for @task, url: update_task_path(@task) do |f| %>
+      <%= f.input :title %>
+      <%= f.input :details %>
+      <%= f.input :completed, as: :boolean, checked_value: true, unchecked_value: false %>
+      <div class="d-flex justify-content-between">
+        <%= f.button :submit, class: "btn-primary" %>
+        <%= link_to "Cancel", show_path(@task), class: "btn btn-outline-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 class='text-center'>Tasks</h1>
+  <div class="text-end">
+    <%= link_to new_task_path do %>
+      <i class="far fa-plus-square fs-1 mb-2 text-muted"></i>
+    <% end %>
+  </div>
+  <ul class="list-group">
+    <% @tasks.each do |task| %>
+      <%= link_to show_path(task) do %>
+        <% if task.completed %>
+          <li class="d-inline-flex list-group-item list-group-item-action list-group-item-dark card-subtitle text-decoration-line-through">
+        <% else %>
+          <li class="d-inline-flex list-group-item list-group-item-action card-subtitle">
+        <% end %>
+        <%= task.title %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
